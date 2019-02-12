@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "deuces"
+version = "0.2.2"
+description = "Deuces: A pure Python poker hand evaluation library"
+authors = ["Circle On Circles <dev@nutchanon.org>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+pytest = "^4.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
