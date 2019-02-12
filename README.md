@@ -7,8 +7,10 @@ A pure Python poker hand evaluation library
     
 ## Installation
 
+Choose One
 ```
-$ pip install deuces
+$ pip install git+https://github.com/CircleOnCircles/deuces
+$ pipenv install git+https://github.com/CircleOnCircles/deuces#egg=deuces
 ```
 
 ## Implementation notes
@@ -19,8 +21,6 @@ Deuces handles 5, 6, and 7 card hand lookups. The 6 and 7 card lookups are done 
 
 I also have lookup tables for 2 card rollouts, which is particularly handy in evaluating Texas Hold'em preflop pot equity, but they are forthcoming as well. 
 
-See my blog for an explanation of how the library works and how the lookup table generation is done:
-http://willdrevo.com/ (haven't posted yet)
 
 ## Usage
 
@@ -149,24 +149,3 @@ For poker hand evaluation in Python, if you desire a cleaner user interface and 
 
 For C/C++, I'd recommand [`pokerstove`](https://github.com/andrewprock/pokerstove), as its hyperoptimized C++ Boost routines can do 10+ million evals/s. 
 
-## License
-
-Copyright (c) 2013 Will Drevo
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.

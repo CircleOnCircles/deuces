@@ -6,11 +6,11 @@ from setuptools import setup
 
 setup(
     name='deuces',
-    version='0.2.1',
+    version='0.2.2',
     description=__doc__,
     long_description=open('README.md', encoding="utf8").read(),
-    author='Will Drevo',
-    url='https://github.com/worldveil/deuces',
+    author='Nutchanon Ninyawee',
+    url='https://github.com/CircleOnCircles/deuces',
     license='MIT',
     packages=['deuces'],
     classifiers=[
