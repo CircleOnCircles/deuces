@@ -1,8 +1,11 @@
 from random import shuffle as rshuffle
+from loguru import logger
+
+from slowroll.cards import Cards
 from .card import Card
 
 
-class Deck:
+class Deck(Cards):
     """
     Class representing a deck. The first time we create, we seed the static 
     deck with the list of unique card integers. Each object instantiated simply
@@ -12,23 +15,24 @@ class Deck:
 
     def __init__(self):
         self.shuffle()
+        self.drawn_cards = []
 
     def shuffle(self):
         # and then shuffle
-        self.cards = Deck.GetFullDeck()
-        rshuffle(self.cards)
+        self._cards = Deck.GetFullDeck()
+        rshuffle(self._cards)
 
     def draw(self, n=1):
-        if n == 1:
-            return self.cards.pop(0)
-
         cards = []
         for i in range(n):
-            cards.append(self.draw())
+            cards.append(self._cards.pop(0))
+
+        logger.info(f'{n} card(s) are drawn. This deck has {len(self.cards)} card(s) remains.')
+        self.drawn_cards.extend(cards)
         return cards
 
-    def __str__(self):
-        return Card.print_pretty_cards(self.cards)
+    def __repr__(self):
+        return repr(self._cards)
 
     @staticmethod
     def GetFullDeck():
@@ -36,8 +40,10 @@ class Deck:
             return list(Deck._FULL_DECK)
 
         # create the standard 52 card deck
-        for rank in Card.STR_RANKS:
-            for suit, val in Card.CHAR_SUIT_TO_INT_SUIT.items():
-                Deck._FULL_DECK.append(Card.new(rank + suit))
+        for rank in Card.RANKS:
+            for suit in Card.SUITS:
+                Deck._FULL_DECK.append(Card(rank + suit))
 
-        return list(Deck._FULL_DECK)
+        return Deck._FULL_DECK.copy()
+
+    __slots__ = ['_cards', 'drawn_cards']

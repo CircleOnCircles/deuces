@@ -32,6 +32,7 @@ class Evaluator(object):
         because that's cycles!
         """
         all_cards = cards + board
+        all_cards = [int(c) for c in all_cards] # require int and in python there is no __band__ (binary and function)
         return self.hand_size_map[len(all_cards)](all_cards)
 
     def _five(self, cards):

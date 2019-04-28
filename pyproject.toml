@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "slowroll"
+version = "0.1.0"
+description = "A Python poker hand evaluation library"
+authors = ["CircleOnCircleS <me@nutchanon.org>"]
+license = "MIT"
+
+readme = 'README.md'
+
+repository = "https://github.com/CircleOnCircles/slowroll"
+homepage = "https://github.com/CircleOnCircles/slowroll"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+joblib = "^0.13.2"
+parse = "^1.12"
+loguru = "^0.2.5"
+termcolor = "^1.1"
+numba = "^0.43.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^4.4"
+nose = "^1.3"
+jupyter = "^1.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

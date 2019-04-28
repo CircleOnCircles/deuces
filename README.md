@@ -1,16 +1,25 @@
-Deuces
-========
 
-A pure Python poker hand evaluation library
+Slowroll
+========
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/CircleOnCircles)
+
+
+A Pythonic poker hand evaluation library
 
     [ 2 ❤ ] , [ 2 ♠ ]
-    
+
+A hard fork of [worldveil/deuces](https://github.com/worldveil/deuces) 👏plus👏 
+* Python 3  
+* 2-hand lookup
+* pokerstove interface
+
 ## Installation
 
 Choose One
 ```
-$ pip install git+https://github.com/CircleOnCircles/deuces
-$ pipenv install git+https://github.com/CircleOnCircles/deuces#egg=deuces
+$ pip install deuces2
+$ poetry add deuces2
+$ pipenv install deuces2
 ```
 
 ## Implementation notes
@@ -18,9 +27,6 @@ $ pipenv install git+https://github.com/CircleOnCircles/deuces#egg=deuces
 Deuces, originally written for the MIT Pokerbots Competition, is lightweight and fast. All lookups are done with bit arithmetic and dictionary lookups. That said, Deuces won't beat a C implemenation (~250k eval/s) but it is useful for situations where Python is required or where bots are allocated reasonable thinking time (human time scale).
 
 Deuces handles 5, 6, and 7 card hand lookups. The 6 and 7 card lookups are done by combinatorially evaluating the 5 card choices, but later releases may have dedicated and faster algorithms for these. 
-
-I also have lookup tables for 2 card rollouts, which is particularly handy in evaluating Texas Hold'em preflop pot equity, but they are forthcoming as well. 
-
 
 ## Usage
 

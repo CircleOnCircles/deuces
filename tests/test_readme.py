@@ -1,22 +1,22 @@
-from deuces import Card, Deck, Evaluator
+from slowroll import Card, Deck, Evaluator
 
 def test_create_cards():
     # create a card
-    card = Card.new('Qh')
+    card = Card('Qh')
 
     # create a board and hole cards
     board = [
-        Card.new('2h'),
-        Card.new('2s'),
-        Card.new('Jc')
+        Card('2h'),
+        Card('2s'),
+        Card('Jc')
     ]
     hand = [
-        Card.new('Qs'),
-        Card.new('Th')
+        Card('Qs'),
+        Card('Th')
     ]
 
     # pretty print cards to console
-    Card.print_pretty_cards(board + hand)
+    # Card.print_pretty_cards(board + hand)
 
     
 
@@ -31,14 +31,12 @@ def test_evaluator():
     player1_hand = deck.draw(2)
     player2_hand = deck.draw(2)
 
-    print("The board:")
-    Card.print_pretty_cards(board)
+    print("The board:" , board)
+    # Card.print_pretty_cards(board)
 
-    print("Player 1's cards:")
-    Card.print_pretty_cards(player1_hand)
+    print("Player 1's cards:", player1_hand)
 
-    print("Player 2's cards:")
-    Card.print_pretty_cards(player2_hand)
+    print("Player 2's cards:", player2_hand)
 
     # and rank your hand
     rank = evaluator.evaluate(board, player1_hand)
